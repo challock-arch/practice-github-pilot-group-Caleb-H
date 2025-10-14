@@ -15,7 +15,7 @@ public class TeacherController {
     private TeacherRepository teacherRepository;
 
     @GetMapping("/teachers")
-    public List getAllTeachers() {
+    public List <Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
 
