@@ -1,4 +1,4 @@
-package Models;
+package com.example.practice_github_pilot.Models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,20 +6,20 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Student {
+public class Teacher {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private int age;
+    private String subject;
 
-    public Student(String name, int age) {
+    public Teacher(String name, String subject) {
         this.name = name;
-        this.age = age;
+        this.subject = subject;
     }
 
-    public Student() {
+    public Teacher() {
     }
 
     public int getId() {
@@ -34,11 +34,13 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
+
+
 }

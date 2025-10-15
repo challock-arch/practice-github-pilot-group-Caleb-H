@@ -1,7 +1,7 @@
-package Controllers;
+package com.example.practice_github_pilot.Controllers;
 
-import Models.Teacher;
-import Repositories.TeacherRepository;
+import com.example.practice_github_pilot.Models.Teacher;
+import com.example.practice_github_pilot.Repositories.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
