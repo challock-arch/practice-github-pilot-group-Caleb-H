@@ -8,28 +8,28 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/teachers")
 public class TeacherController {
 
     @Autowired
     private TeacherRepository teacherRepository;
 
-    @GetMapping("/teachers")
+    @GetMapping("")
     public List <Teacher> getAllTeachers() {
         return teacherRepository.findAll();
     }
 
-    @GetMapping("/teachers/{id}")
+    @GetMapping("/{id}")
     public Teacher getTeacherById(@PathVariable Integer id) {
         return teacherRepository.findById(id).orElse(null);
     }
 
-    @PostMapping("/teachers")
+    @PostMapping("")
     public Teacher createTeacher(@RequestBody Teacher teacher) {
         return teacherRepository.save(teacher);
     }
 
-    @PutMapping("/teachers/{id}")
+    @PutMapping("/{id}")
     public Teacher updateTeacher(@PathVariable Integer id, @RequestBody Teacher teacherDetails) {
         Teacher teacher = teacherRepository.findById(id).orElse(null);
         if (teacher != null) {
@@ -41,7 +41,7 @@ public class TeacherController {
         }
     }
 
-    @DeleteMapping("/teachers/{id}")
+    @DeleteMapping("/{id}")
     public void deleteTeacher(@PathVariable Integer id) {
         teacherRepository.deleteById(id);
     }
